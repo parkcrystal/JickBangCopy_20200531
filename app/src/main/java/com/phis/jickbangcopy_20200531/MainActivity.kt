@@ -2,11 +2,16 @@ package com.phis.jickbangcopy_20200531
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
+import com.phis.jickbangcopy_20200531.adapters.BangAdapter
 import com.phis.jickbangcopy_20200531.datas.Room
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
 
+    lateinit var bangAdapter : BangAdapter
     val rooms = ArrayList<Room>()
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +38,14 @@ class MainActivity : BaseActivity() {
         rooms.add(Room(10500, "마포구 망원동", 1, "넓고 채광 좋은 방"))
         rooms.add(Room(2300, "마포구 서교동", 4, "싸게 잘 나온 방"))
         rooms.add(Room(6000, "마포구 성산동", 1, "넓고 채광 좋은 방"))
-        
+
+        bangAdapter = BangAdapter(mContext, R.layout.room_list_item, rooms)
+        bangListView.adapter = bangAdapter
+
+
+
+
+
     }
 
 
