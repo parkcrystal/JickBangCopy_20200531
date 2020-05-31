@@ -1,6 +1,8 @@
 package com.phis.jickbangcopy_20200531.datas
 
 import java.text.DecimalFormat
+import java.text.NumberFormat
+import java.util.*
 
 class Room(val price:Int, val address: String, val floor: Int, val desc: String) {
 
@@ -21,17 +23,16 @@ class Room(val price:Int, val address: String, val floor: Int, val desc: String)
     fun getFormattedPrice() : String {
 
         if(this.price < 10000 ) {
-            val uk = this.price / 10000
-            val underUk = this.price % 10000
-            return "${uk}억 ${underUk}"
 
-
-
+            return NumberFormat.getInstance(Locale.KOREA).format(this.price)
 
         }
         else {
 
-            return "{$price}"
+//            정수 / 정수 = 정수 => 28500 / 10000 = 2
+            val uk = this.price / 10000
+            val underUk = this.price % 10000
+            return "${uk}억 ${NumberFormat.getInstance(Locale.KOREA).format(underUk)}"
         }
 
     }
