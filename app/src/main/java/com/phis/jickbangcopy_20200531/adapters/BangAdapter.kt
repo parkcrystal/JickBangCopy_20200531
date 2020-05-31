@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.autofill.AutofillId
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import com.phis.jickbangcopy_20200531.R
 import com.phis.jickbangcopy_20200531.datas.Room
 
@@ -26,6 +27,17 @@ class BangAdapter(context: Context,  resId: Int, list:List<Room>  ) : ArrayAdapt
         }
 
         val row = tempRow!!
+
+        //출력 데이터 가져오기
+        val data = mList.get(position)
+
+        val priceTxt = row.findViewById<TextView>(R.id.priceTxt)
+        val addressAndFloorTxt = row.findViewById<TextView>(R.id.addressAndFloorTxt)
+        val descTxt = row.findViewById<TextView>(R.id.descTxt)
+
+
+        addressAndFloorTxt.text = "${data.address}, ${data.getFormattedFloor()}"
+        descTxt.text = data.desc
 
         return row
 
