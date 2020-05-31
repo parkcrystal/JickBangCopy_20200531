@@ -36,6 +36,7 @@ class BangAdapter(context: Context,  resId: Int, list:List<Room>  ) : ArrayAdapt
         val descTxt = row.findViewById<TextView>(R.id.descTxt)
 
 
+        priceTxt.text = "${data.getFormattedPrice()}"
         addressAndFloorTxt.text = "${data.address}, ${data.getFormattedFloor()}"
         descTxt.text = data.desc
 
