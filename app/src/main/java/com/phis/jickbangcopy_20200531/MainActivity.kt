@@ -25,7 +25,16 @@ class MainActivity : BaseActivity() {
     override fun setupEvents() {
 
 
+        bangListView.setOnItemLongClickListener { parent, view, position, id ->
 
+            val alert = AlertDialog.Builder(mContext)
+            alert.setTitle("테스트")
+            alert.setMessage("테스트용 얼럿")
+            alert.setPositiveButton("확인", null)
+            alert.show()
+
+            return@setOnItemLongClickListener true
+        }
     }
 
     override fun setValues() {
