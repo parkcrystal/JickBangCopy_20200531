@@ -3,6 +3,7 @@ package com.phis.jickbangcopy_20200531
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AlertDialog
 import com.phis.jickbangcopy_20200531.adapters.BangAdapter
 import com.phis.jickbangcopy_20200531.datas.Room
 import kotlinx.android.synthetic.main.activity_main.*
@@ -22,6 +23,8 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setupEvents() {
+
+
 
     }
 

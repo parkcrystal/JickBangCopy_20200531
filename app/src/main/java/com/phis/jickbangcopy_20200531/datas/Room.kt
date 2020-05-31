@@ -30,6 +30,7 @@ class Room(val price:Int, val address: String, val floor: Int, val desc: String)
         else {
 
 //            정수 / 정수 = 정수 => 28500 / 10000 = 2
+//            28500 % 10000
             val uk = this.price / 10000
             val underUk = this.price % 10000
             return "${uk}억 ${NumberFormat.getInstance(Locale.KOREA).format(underUk)}"
